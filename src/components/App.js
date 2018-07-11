@@ -7,13 +7,10 @@ import SampleComponent from './SampleComponent'
 
 const App = () => {
   return (
-    <div>
-      <h2>Sample Component</h2>
-       <SampleComponent />
-      <h2>Articles</h2>
-      <ListComponent />
-      <h2>Add a new article</h2>
-      <Form />
+    <div className="container">
+      <div><SampleComponent /></div>
+      <div><ListComponent /></div>
+      <div><Form /></div>
     </div>
   );
 };

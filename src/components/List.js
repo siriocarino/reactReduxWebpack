@@ -11,7 +11,7 @@ class ListComponent extends Component {
       const {articles} = this.props;
       
       const listItems = articles.map((article) =>
-      <li key={article.id}> {article.title} : {article.id}  </li>
+      <li className="list-item" key={article.id}> {article.title} : {article.id}  </li>
       );
 
       return (

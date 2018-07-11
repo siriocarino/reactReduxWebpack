@@ -2,3 +2,8 @@ body {
     line-height: 2;
     background: #dadada
 }
+
+.container {
+    display: flex;
+    /* or inline-flex */
+}

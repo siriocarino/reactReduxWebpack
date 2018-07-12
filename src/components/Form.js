@@ -31,7 +31,7 @@ class ConnectedForm extends Component {
     const { title } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className="form-group">
+        <div className="">
           <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -41,7 +41,7 @@ class ConnectedForm extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <button type="submit" className="btn btn-success btn-lg">
+        <button type="submit" className="btn">
           SAVE
         </button>
       </form>

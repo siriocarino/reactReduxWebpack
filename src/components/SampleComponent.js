@@ -6,13 +6,19 @@ const mapState = state => ({
     data : state.test.data,
 });
 
+
+
 class SampleComponent extends Component {
+   
     render() {
         const {name, data} = this.props;
+
         return (
             <div>
-                Data from Redux: {name} {data}
+                Data from Redux: {name} {data} 
+
             </div>
+            
         );
     }
 }

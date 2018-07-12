@@ -26,13 +26,13 @@ class ListComponent extends Component {
   render() {
       const {articles} = this.props;
       const listItems = articles.map((article) =>
-      <li className="list-item" key={article.id}> {article.title} : {article.id} <button onClick={(e) => this.deleteItem(e, article)} >Remove Article</button> </li>
+      <li className="collection-item" key={article.id}><h5>{article.title}</h5><button className="btn" onClick={(e) => this.deleteItem(e, article)} >Remove Article</button> </li>
       );
 
 
       return (
           <div>
-               <ul>{ listItems } </ul>
+               <ul className="collection">{ listItems } </ul>
           </div>
       );
   }

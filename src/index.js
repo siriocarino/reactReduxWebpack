@@ -7,8 +7,9 @@ import './style.scss'
 
 
 
-console.log(store.getState())
-
+store.subscribe(() => {
+  console.log(store.getState());
+});
 
 render(
      <Provider store={store}>

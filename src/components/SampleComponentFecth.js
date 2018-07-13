@@ -26,8 +26,6 @@ class SampleComponent extends Component {
         this.setState({ isLoading: true });
 
         fetch(API + DEFAULT_QUERY)
-        //   .then(response => response.json())
-        //   .then(data => this.setState({ hits: data.hits }));
 
           .then((response) => response.json())
           .then((data) => {

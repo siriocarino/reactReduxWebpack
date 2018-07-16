@@ -1,21 +1,21 @@
-// src/js/actions/index.js
-import {
-     ADD_ARTICLE,
-     REMOVE_ARTICLE,
-     FETCH_PRODUCTS_BEGIN,
-     FETCH_PRODUCTS_SUCCESS,
-     FETCH_PRODUCTS_FAILURE
-} from "../constants/action-types";
+// import {
+//      ADD_ARTICLE,
+//      REMOVE_ARTICLE,
+//      FETCH_PRODUCTS_BEGIN,
+//      FETCH_PRODUCTS_SUCCESS,
+//      FETCH_PRODUCTS_FAILURE
+// } from "../constants/action-types";
 
+import * as types from '../constants/action-types';
 
 
 export const addArticle = article => ({
-     type: ADD_ARTICLE, // ACNTION TYPE
+     type: types.ADD_ARTICLE, // ACNTION TYPE
      payload: article
 });
 
 export const removeArticle = article => ({
-     type: REMOVE_ARTICLE,
+     type: types.REMOVE_ARTICLE,
      payload: article
 });
 
@@ -23,19 +23,62 @@ export const removeArticle = article => ({
 // example fetch
 
 export const fetchProductsBegin = () => ({
-     type: FETCH_PRODUCTS_BEGIN
+     type: types.FETCH_PRODUCTS_BEGIN
 });
 
 export const fetchProductsSuccess = products => ({
-     type: FETCH_PRODUCTS_SUCCESS,
+     type: types.FETCH_PRODUCTS_SUCCESS,
      payload: {
           products
      }
 });
 
 export const fetchProductsError = error => ({
-     type: FETCH_PRODUCTS_FAILURE,
+     type: types.FETCH_PRODUCTS_FAILURE,
      payload: {
           error
      }
+});
+
+const addTodo = (text) => ({
+     type: types.ADD_TODO,
+     payload: {
+          text
+     }
+});
+
+const removeTodo = (id) => ({
+     type: types.REMOVE_TODO,
+     payload: {
+          id
+     }
+});
+
+const editTodo = (id, text) => ({
+     type: types.EDIT_TODO,
+     payload: {
+          id,
+          text
+     }
+});
+
+const completeTodo = (id) => ({
+     type: types.COMPLETE_TODO,
+     payload: {
+          id
+     }
+});
+
+const completeAll = () => ({
+     type: types.COMPLETE_ALL
+});
+
+const clearCompleted = () => ({
+     type: types.CLEAR_COMPLETED
+});
+
+
+export const updateText = text => ({
+     type: types.UPDATE_TEXT, // ACNTION TYPE
+     payload: text
 });

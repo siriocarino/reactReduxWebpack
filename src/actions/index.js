@@ -19,9 +19,31 @@ export const removeArticle = article => ({
      payload: article
 });
 
+// Handle HTTP errors since fetch won't.
+function handleErrors(response) {
+     if (!response.ok) {
+       throw Error(response.statusText);
+     }
+     return response;
+   }
 
 // example fetch
+export function fetchProducts() {
+     return dispatch => {
+          dispatch(fetchProductsBegin());
+          return fetch("https://www.reddit.com/r/reactjs.json")
+               .then(handleErrors)
+               .then(res => res.json())
+               .then(json => {
+                    console.log("json.data")
 
+                    console.log(json.data)
+                    dispatch(fetchProductsSuccess(json.data));
+                    return json.data;
+               })
+               .catch(error => dispatch(fetchProductsError(error)));
+     };
+}
 export const fetchProductsBegin = () => ({
      type: types.FETCH_PRODUCTS_BEGIN
 });

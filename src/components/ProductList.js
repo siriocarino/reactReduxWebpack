@@ -17,19 +17,26 @@ class ProductList extends React.Component {
     if (loading) {
       return <div>Loading...</div>;
     }
-
-    return (
-      <ul>
-        {products.map(product =>
-          <li key={product.id}>{product.name}</li>
-        )}
-      </ul>
-    );
+    if(products){
+      return (
+        <div>
+        <ul>
+          {products.map(product =>
+           <li key={product.data.id}>{product.data.id}</li>
+         )}
+        </ul>
+  
+        </div>
+      )
+    }
+    return(
+      <div></div>
+    )
   }
 }
 
 const mapStateToProps = state => ({
-  products: state.products.items,
+  products: state.products.items.children,
   loading: state.products.loading,
   error: state.products.error
 });

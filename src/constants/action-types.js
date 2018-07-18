@@ -14,3 +14,7 @@ export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
 
 
 export const UPDATE_TEXT = 'UPDATE_TEXT';
+
+
+export const LOAD_CATS_SUCCESS = 'LOAD_CATS_SUCCESS';  
+
